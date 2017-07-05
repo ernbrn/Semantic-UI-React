@@ -371,9 +371,10 @@ class Portal extends Component {
     debug('mountPortal()')
 
     const {
-      mountNode = isBrowser ? document.body : null,
+      mountNode = isBrowser ? (this.props.mountNode ? this.props.mountNode : document.body) : null,
       prepend,
     } = this.props
+
 
     this.rootNode = document.createElement('div')
 
